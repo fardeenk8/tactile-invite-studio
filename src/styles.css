@@ -169,9 +169,10 @@
 .stationery-heading .printed-label { margin-top: 24px; }
 .envelope-position { position: absolute; top: 43%; left: 8%; width: 84%; transform: translateY(-25%); }
 .envelope-object { position: relative; width: 100%; aspect-ratio: 1.635; perspective: 1100px; filter: drop-shadow(0 14px 10px oklch(0.32 0.03 55 / 10%)); }
-.envelope-back { position: absolute; inset: 0; background: var(--paper-shade); border-radius: 2px; box-shadow: var(--object-shadow); }
+.envelope-back { position: absolute; inset: 0; background: var(--paper-shade) url('./assets/paper-grain.jpg') center / 180px; border-radius: 2px; box-shadow: var(--object-shadow); }
 .envelope-pocket, .envelope-flap { position: absolute; inset: 0; }
-.envelope-pocket { z-index: 3; clip-path: polygon(0 0, 50% 70%, 100% 0, 100% 100%, 0 100%); }
+.envelope-pocket { z-index: 3; background: var(--paper) url('./assets/paper-grain.jpg') center / 180px; clip-path: polygon(0 0, 50% 70%, 100% 0, 100% 100%, 0 100%); }
+.envelope-pocket::after { content: ''; position: absolute; inset: 0; background: var(--paper) url('./assets/paper-grain.jpg') center / 180px; clip-path: polygon(0 100%, 50% 34%, 100% 100%); opacity: 0; }
 .envelope-flap { z-index: 4; clip-path: polygon(0 0, 100% 0, 100% 1%, 51% 71%, 49% 71%, 0 1%); transform-origin: top center; backface-visibility: visible; }
 .envelope-pocket img, .envelope-flap img { height: 100%; width: 100%; object-fit: fill; user-select: none; }
 .envelope-ribbon { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 5; overflow: visible; pointer-events: none; }
@@ -218,9 +219,12 @@
 .phase-opening .ribbon-wrap-left { animation: slip-left 1300ms 700ms var(--physical-ease) forwards; }
 .phase-opening .ribbon-wrap-right { animation: slip-right 1300ms 700ms var(--physical-ease) forwards; }
 .phase-opening .envelope-flap { animation: hinge-open 1500ms 1150ms var(--physical-ease) forwards; }
+.phase-opening .envelope-pocket img { animation: print-recede 350ms 1200ms ease forwards; }
+.phase-opening .envelope-pocket::after { animation: fold-visible 350ms 1200ms ease forwards; }
 .phase-opening .paper-insert { animation: paper-emerge 1600ms 2150ms var(--physical-ease) forwards; }
 .phase-opening .envelope-position { animation: envelope-settle 950ms 3350ms var(--physical-ease) forwards; }
-.phase-opening .stationery-heading, .phase-opening .envelope-caption, .phase-opening .opening-footnote { animation: print-recede 650ms 2400ms ease forwards; }
+.phase-opening .stationery-heading { animation: print-recede 650ms 800ms ease forwards; }
+.phase-opening .envelope-caption, .phase-opening .opening-footnote { animation: print-recede 650ms 2400ms ease forwards; }
 .phase-revealed .opening-scene { display: none; }
 .phase-revealed .revealed-invitation { display: block; animation: invitation-arrive 800ms var(--physical-ease) both; }
 @keyframes seal-release { 0% { transform: translate(-50%,-50%) scale(1); } 20% { transform: translate(-50%,-50%) scale(.94); } 50% { opacity: 1; transform: translate(-50%,-45%) rotate(-4deg); } 100% { transform: translate(-50%,5%) rotate(-8deg); opacity: 0; } }
@@ -232,6 +236,7 @@
 @keyframes paper-emerge { 0% { opacity: 1; transform: translateY(0); } 100% { opacity: 1; transform: translateY(-72%); height: 165%; } }
 @keyframes envelope-settle { to { transform: translateY(32%); opacity: 0; } }
 @keyframes print-recede { to { opacity: 0; } }
+@keyframes fold-visible { to { opacity: 1; } }
 @keyframes invitation-arrive { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
 @media (min-width: 431px) { .envelope-position { width: 362px; left: calc(50% - 181px); } .revealed-invitation { width: 390px; margin-inline: auto; } }
 @media (min-width: 768px) { .stationery-background { object-fit: cover; object-position: center 52%; } .envelope-position { width: 470px; left: calc(50% - 235px); top: 43%; } .wax-seal { width: 79px; height: 79px; } .stationery-heading { top: 11%; } .envelope-caption { top: 73%; } .caption-names { font-size: 37px; } .revealed-invitation { width: 450px; padding-top: 70px; } }
