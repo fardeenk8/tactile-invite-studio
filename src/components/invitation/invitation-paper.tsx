@@ -1,14 +1,21 @@
+import { BotanicalArt, Ornament } from './botanical-art';
+
 export function InvitationPaper({ miniature = false }: { miniature?: boolean }) {
   return (
     <div className={miniature ? 'paper-insert' : 'invitation-paper'}>
-      <div className="paper-rule" aria-hidden="true" />
-      <p className="printed-label">Together with their families</p>
-      <h1 className="couple-names"><span>Clara</span><em>&</em><span>Julien</span></h1>
-      <p className="invitation-message">joyfully invite you to celebrate<br />their wedding</p>
-      <div className="date-imprint"><span>Saturday</span><strong>19</strong><span>June 2027</span></div>
-      <p className="venue-name">Maison des Roses</p>
-      <p className="venue-place">Provence, France</p>
-      <div className="paper-rule" aria-hidden="true" />
+      <div className="engraved-border" aria-hidden="true" />
+      <BotanicalArt />
+      <div className="invitation-print">
+        <div className="invitation-emblem" aria-hidden="true"><span>E</span><em>J</em><small>❧</small></div>
+        <p className="printed-label">Together with their families</p>
+        <h1 className="couple-names"><span>Emma Rose</span><em>&</em><span>James Alexander</span></h1>
+        <p className="invitation-message">Joyfully invite you to celebrate<br />their wedding</p>
+        <div className="date-imprint"><span>Saturday</span><div className="date-number"><i /><strong>12</strong><i /></div><span>December</span><em>2026</em></div>
+        <Ornament />
+        <p className="printed-label venue-intro">The wedding will be held at</p>
+        <p className="venue-name">Rosewood Garden<br />Estate</p>
+        <p className="venue-place">Santa Barbara, California</p>
+      </div>
     </div>
   );
 }
