@@ -78,6 +78,13 @@
   --object-shadow: 0 13px 24px -10px oklch(0.32 0.03 55 / 22%), 0 3px 5px oklch(0.32 0.03 55 / 13%);
   --paper-shadow: 0 5px 20px oklch(0.32 0.03 55 / 9%);
   --physical-ease: cubic-bezier(.35, .05, .2, 1);
+  --invitation-stock: oklch(0.958 0.012 34);
+  --invitation-ink: oklch(0.435 0.036 16);
+  --invitation-soft: oklch(0.535 0.038 16);
+  --invitation-border: oklch(0.83 0.026 35);
+  --invitation-rose: oklch(0.69 0.057 22);
+  --invitation-sage: oklch(0.68 0.036 108);
+  --invitation-shadow: 0 8px 34px color-mix(in oklch, var(--invitation-ink) 9%, transparent);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.129 0.042 264.695);
   --popover: oklch(1 0 0);
@@ -242,3 +249,108 @@
 @media (min-width: 768px) { .stationery-background { object-fit: cover; object-position: center 52%; } .envelope-position { width: 470px; left: calc(50% - 235px); top: 43%; } .wax-seal { width: 79px; height: 79px; } .stationery-heading { top: 11%; } .envelope-caption { top: 73%; } .caption-names { font-size: 37px; } .revealed-invitation { width: 450px; padding-top: 70px; } }
 @media (max-height: 650px) { .opening-scene { min-height: 0; } .stationery-heading { top: 8%; } .stationery-heading .printed-label { margin-top: 17px; } .envelope-position { top: 42%; } .envelope-caption { top: 75%; } .caption-names { font-size: 28px; } .envelope-caption .printed-label { margin-top: 9px; } .opening-footnote { bottom: 4%; } .revealed-invitation { padding-top: 24px; } .invitation-paper { padding: 27px 16px 12px; } .couple-names { font-size: 51px; margin: 23px 0 20px; } .date-imprint { margin-block: 25px; } }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 1ms !important; animation-delay: 0ms !important; transition-duration: 1ms !important; } }
+
+/* Botanical stationery: the envelope's geometry and timeline remain untouched. */
+.revealed-invitation { width: min(100%, 470px); margin-inline: auto; padding: 16px 12px 28px; color: var(--invitation-ink); }
+.invitation-paper { padding: 0; width: 100%; min-height: 770px; background: var(--invitation-stock); border: 0; box-shadow: var(--invitation-shadow); isolation: isolate; }
+.invitation-paper::before, .paper-insert::before { content: ''; position: absolute; inset: 0; background: url('./assets/paper-grain.jpg') center / 240px; opacity: .075; border: 0; z-index: -1; pointer-events: none; }
+.engraved-border { position: absolute; inset: 17px; border: 1px solid var(--invitation-border); pointer-events: none; }
+.engraved-border::after { content: ''; position: absolute; inset: 5px; border: .5px solid var(--invitation-border); }
+.botanical-art { pointer-events: none; user-select: none; }
+.botanical-frame { position: absolute; inset: 3px; width: calc(100% - 6px); height: calc(100% - 6px); object-fit: fill; z-index: 1; }
+.invitation-print { position: relative; z-index: 2; width: 74%; margin-inline: auto; padding: 94px 0 88px; text-align: center; }
+.invitation-print .printed-label { color: var(--invitation-soft); font-size: 9px; line-height: 1.7; }
+.invitation-emblem { height: 70px; margin-bottom: 19px; color: var(--invitation-ink); font-family: var(--font-editorial); position: relative; font-size: 42px; font-weight: 400; line-height: 1; }
+.invitation-emblem em { position: relative; left: -6px; top: 7px; font-size: 43px; }
+.invitation-emblem small { display: block; margin-top: 8px; font-size: 20px; color: var(--invitation-sage); }
+.invitation-print .couple-names { font-size: 35px; font-weight: 500; line-height: 1.14; margin: 25px -8px 23px; color: var(--invitation-ink); }
+.invitation-print .couple-names span { white-space: nowrap; }
+.invitation-print .couple-names span:first-child { font-style: italic; }
+.invitation-print .couple-names em { color: var(--invitation-rose); font-size: 28px; line-height: 1.4; font-weight: 400; }
+.invitation-print .invitation-message { font-family: var(--font-sans); color: var(--invitation-soft); text-transform: uppercase; font-size: 9px; line-height: 1.9; }
+.invitation-print .date-imprint { display: flex; flex-direction: column; gap: 5px; margin: 26px 0 20px; }
+.invitation-print .date-imprint span { font-size: 10px; color: var(--invitation-soft); }
+.date-number { display: flex; width: 148px; align-items: center; gap: 16px; justify-content: center; }
+.date-number i { height: .5px; flex: 1; background: var(--invitation-border); }
+.invitation-print .date-imprint strong { font-size: 59px; border: 0; color: var(--invitation-ink); line-height: 1; }
+.invitation-print .date-imprint em { font-family: var(--font-editorial); font-size: 18px; font-style: normal; line-height: 1.4; }
+.engraved-ornament { display: flex; justify-content: center; align-items: center; gap: 10px; color: var(--invitation-rose); margin: 22px auto; width: 94px; }
+.engraved-ornament span { flex: 1; height: .5px; background: var(--invitation-border); }
+.engraved-ornament i { font-size: 14px; font-style: normal; line-height: 1; }
+.invitation-print .venue-intro { font-size: 8px; }
+.invitation-print .venue-name { font-size: 21px; line-height: 1.3; margin: 10px -10px 9px; font-weight: 500; }
+.invitation-print .venue-place { font-size: 8px; text-transform: uppercase; color: var(--invitation-soft); margin: 0; }
+.paper-sentiment { font-family: var(--font-editorial); font-size: 13px; font-style: italic; line-height: 1.5; margin-top: 27px; color: var(--invitation-soft); }
+.paper-insert { isolation: isolate; padding: 0; background: var(--invitation-stock); color: var(--invitation-ink); }
+.paper-insert .engraved-border { inset: 7px; }
+.paper-insert .engraved-border::after { inset: 3px; }
+.paper-insert .invitation-print { padding: 30px 0 35px; }
+.paper-insert .invitation-emblem { font-size: 19px; height: 28px; margin-bottom: 8px; }
+.paper-insert .invitation-emblem em { font-size: 20px; top: 3px; left: -3px; }
+.paper-insert .invitation-emblem small { font-size: 9px; margin-top: 0; }
+.paper-insert .invitation-print .printed-label { font-size: 4px; }
+.paper-insert .invitation-print .couple-names { font-size: 18px; margin: 9px -8px; }
+.paper-insert .invitation-print .couple-names em { font-size: 13px; }
+.paper-insert .invitation-print .invitation-message { font-size: 4px; }
+.paper-insert .invitation-print .date-imprint { gap: 1px; margin: 9px 0; }
+.paper-insert .date-number { width: 65px; gap: 6px; }
+.paper-insert .invitation-print .date-imprint strong { font-size: 26px; }
+.paper-insert .invitation-print .date-imprint span { font-size: 4px; }
+.paper-insert .invitation-print .date-imprint em { font-size: 9px; }
+.paper-insert .engraved-ornament { width: 40px; gap: 3px; margin: 8px auto; }
+.paper-insert .engraved-ornament i { font-size: 8px; }
+.paper-insert .invitation-print .venue-name { font-size: 11px; margin-block: 5px; }
+.paper-insert .invitation-print .venue-place { font-size: 4px; }
+.paper-insert .paper-sentiment { font-size: 6px; margin-top: 8px; }
+.chapter-divider { display: flex; align-items: center; flex-direction: column; gap: 12px; padding: 32px 0 14px; font-family: var(--font-editorial); font-style: italic; font-size: 16px; color: var(--invitation-soft); }
+.celebration-pages { margin-inline: -12px; }
+.celebration-section { position: relative; isolation: isolate; padding: 80px 45px; text-align: center; overflow: hidden; }
+.celebration-section .printed-label { color: var(--invitation-soft); font-size: 9px; }
+.celebration-section h2 { position: relative; font-family: var(--font-editorial); font-size: 33px; line-height: 1.18; font-weight: 500; margin: 16px 0 25px; }
+.celebration-section h2 em { font-weight: 400; }
+.celebration-section h3 { font-family: var(--font-editorial); font-size: 24px; font-weight: 500; margin: 20px 0 15px; }
+.section-prose { position: relative; font-family: var(--font-editorial); font-size: 19px; line-height: 1.7; color: var(--invitation-soft); margin: 20px auto; max-width: 310px; }
+.romantic-note { font-family: var(--font-editorial); font-size: 18px; line-height: 1.5; font-style: italic; color: var(--invitation-soft); }
+.celebration-section .botanical-sprig { position: absolute; width: 160px; height: 240px; object-fit: contain; z-index: -1; opacity: .65; }
+.story-section { padding-top: 80px; padding-bottom: 110px; }
+.story-section .botanical-sprig { left: -72px; bottom: 5px; transform: rotate(16deg); }
+.ceremony-section { background: var(--invitation-stock); padding-top: 100px; padding-bottom: 65px; }
+.ceremony-section .botanical-garland { position: absolute; width: 100%; height: 140px; object-fit: contain; top: -12px; left: 0; }
+.occasion-time { font-family: var(--font-editorial); font-size: 26px; line-height: 1.5; }
+.occasion-time em { display: block; font-size: 17px; color: var(--invitation-soft); }
+.reception-section { text-align: left; padding: 85px 48px; }
+.reception-section .botanical-sprig { right: -75px; top: 64px; transform: rotate(-23deg); opacity: .45; }
+.printed-schedule { margin-block: 32px; }
+.printed-schedule > div { display: grid; grid-template-columns: 65px 1fr; align-items: baseline; gap: 15px; padding-block: 15px; border-bottom: .5px solid var(--invitation-border); }
+.printed-schedule span { font-size: 10px; color: var(--invitation-soft); }
+.printed-schedule p { font-family: var(--font-editorial); font-size: 20px; }
+.location-section { padding-bottom: 145px; background: color-mix(in oklch, var(--invitation-stock) 50%, transparent); }
+.location-section .botanical-garland { position: absolute; width: 120%; max-width: none; left: -5%; bottom: -5px; height: 150px; object-fit: contain; }
+.stationery-link { font-size: 10px; text-transform: uppercase; color: var(--invitation-ink); border-bottom: 1px solid var(--invitation-border); padding-inline: 0; height: 42px; }
+.location-preview-note, .rsvp-preview-label { font-size: 10px; line-height: 1.6; color: var(--invitation-soft); margin-top: 12px; }
+.dress-section { padding: 85px 52px 95px; }
+.dress-section .botanical-sprig { width: 125px; height: 180px; right: -50px; bottom: 10px; transform: rotate(-15deg); }
+.rsvp-section { background: var(--invitation-stock); padding: 105px 35px 70px; }
+.rsvp-section > .botanical-garland { position: absolute; width: 85%; height: 130px; top: -5px; left: 7.5%; object-fit: contain; }
+.rsvp-form { margin-top: 30px; text-align: left; }
+.rsvp-form > label, .rsvp-form legend { display: block; font-size: 11px; color: var(--invitation-soft); margin: 20px 0 8px; }
+.rsvp-form label span { font-size: 10px; }
+.rsvp-form > input, .rsvp-form textarea { display: block; width: 100%; background: transparent; border: 0; border-bottom: 1px solid var(--invitation-border); font-family: var(--font-editorial); font-size: 17px; padding: 10px 0; border-radius: 0; color: var(--invitation-ink); outline-offset: 5px; outline-color: var(--invitation-rose); }
+.rsvp-form input::placeholder, .rsvp-form textarea::placeholder { color: var(--invitation-soft); opacity: .75; }
+.rsvp-form > input::placeholder { font-size: 15px; }
+.attendance-options { display: flex; flex-direction: column; gap: 13px; padding-top: 6px; }
+.attendance-options label { display: flex; align-items: center; gap: 10px; font-family: var(--font-editorial); font-size: 19px; cursor: pointer; }
+.attendance-options input { accent-color: var(--invitation-ink); width: 16px; height: 16px; }
+.stationery-submit { width: 100%; margin-top: 28px; border: 1px solid var(--invitation-border); font-size: 11px; color: var(--invitation-ink); height: 46px; text-transform: uppercase; }
+.stationery-submit:hover { background: color-mix(in oklch, var(--invitation-rose) 10%, transparent); }
+.rsvp-confirmation { padding: 38px 0; }
+.rsvp-confirmation svg { margin-inline: auto; color: var(--invitation-sage); }
+.rsvp-confirmation p { font-family: var(--font-editorial); font-size: 18px; color: var(--invitation-soft); line-height: 1.6; }
+.rsvp-confirmation button { margin-top: 20px; font-size: 11px; color: var(--invitation-ink); }
+.final-section { padding-top: 120px; padding-bottom: 50px; }
+.final-section .botanical-garland { position: absolute; width: 75%; height: 140px; left: 12.5%; top: 0; object-fit: contain; }
+.signature-names { font-family: var(--font-editorial); font-size: 33px; font-style: italic; margin: 28px 0 18px; }
+.signature-names em { font-size: 24px; color: var(--invitation-rose); }
+.invitation-closing { margin-top: 0; }
+@media (max-width: 359px) { .invitation-paper { min-height: 710px; } .invitation-print { padding: 79px 0 83px; } .invitation-print .couple-names { font-size: 28px; } .invitation-print .venue-name { font-size: 18px; } .invitation-print .printed-label { font-size: 8px; } .invitation-emblem { margin-bottom: 13px; height: 62px; } .paper-sentiment { font-size: 12px; } .celebration-section { padding-inline: 35px; } .celebration-section h2 { font-size: 29px; } }
+@media (min-width: 768px) { .revealed-invitation { padding-top: 40px; } .invitation-paper { min-height: 820px; } .invitation-print { padding-top: 105px; padding-bottom: 100px; } .invitation-print .couple-names { font-size: 42px; } .invitation-print .printed-label, .invitation-print .invitation-message { font-size: 10px; } .invitation-print .venue-name { font-size: 24px; } .invitation-print .venue-place { font-size: 9px; } }
