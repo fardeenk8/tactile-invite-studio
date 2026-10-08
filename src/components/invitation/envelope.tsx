@@ -12,7 +12,7 @@ export function Envelope({ onOpen, disabled }: { onOpen: () => void; disabled: b
       <div className="envelope-pocket"><img src={envelope} alt="" width={1536} height={1024} draggable={false} /></div>
       <div className="envelope-flap"><img src={envelope} alt="" width={1536} height={1024} draggable={false} /></div>
       <Ribbon />
-      <Button variant="stationery" className="wax-seal" onClick={onOpen} disabled={disabled} aria-label="Open Clara and Julien’s wedding invitation">
+      <Button variant="stationery" className="wax-seal" onClick={onOpen} disabled={disabled} aria-label="Open Emma and James’s wedding invitation">
         <img src={seal} alt="Botanical rose wax seal" width={816} height={816} draggable={false} />
       </Button>
     </div>

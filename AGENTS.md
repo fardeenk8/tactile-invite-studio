@@ -13,3 +13,5 @@
 - Keep the opening controller, envelope object, ribbon artwork, and revealed invitation in separate browser-safe modules so physical animation and content can evolve independently.
 - Coordinate the opening with one state machine and CSS animation timeline; this preserves layer relationships without a heavyweight animation dependency.
 - Use generated photographic paper and seal assets with hinged masked envelope layers for tactile detail while keeping the object interactive.
+- Share botanical artwork and invitation typography between the emerging insert and revealed paper; isolate the scrolling celebration sections from opening mechanics so the physical timeline stays unchanged.
+- Keep RSVP explicitly preview-only until real guest collection is requested; this fictional presentation must never imply a response was delivered.
