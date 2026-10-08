@@ -13,7 +13,7 @@ export function InvitationPaper({ miniature = false }: { miniature?: boolean }) 
         <div className="date-imprint"><span>Saturday</span><div className="date-number"><i /><strong>12</strong><i /></div><span>December</span><em>2026</em></div>
         <Ornament />
         <p className="printed-label venue-intro">The wedding will be held at</p>
-        <p className="venue-name">Rosewood Garden Estate</p>
+        <p className="venue-name">Rosewood Garden<br />Estate</p>
         <p className="venue-place">Santa Barbara, California</p>
       </div>
     </div>
