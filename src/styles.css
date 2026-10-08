@@ -258,17 +258,17 @@
 .engraved-border::after { content: ''; position: absolute; inset: 5px; border: .5px solid var(--invitation-border); }
 .botanical-art { pointer-events: none; user-select: none; }
 .botanical-frame { position: absolute; inset: 3px; width: calc(100% - 6px); height: calc(100% - 6px); object-fit: fill; z-index: 1; }
-.invitation-print { position: relative; z-index: 2; width: 74%; margin-inline: auto; padding: 94px 0 88px; text-align: center; }
+.invitation-print { position: relative; z-index: 2; width: 74%; margin-inline: auto; padding: 88px 0 88px; text-align: center; }
 .invitation-print .printed-label { color: var(--invitation-soft); font-size: 9px; line-height: 1.7; }
-.invitation-emblem { height: 70px; margin-bottom: 19px; color: var(--invitation-ink); font-family: var(--font-editorial); position: relative; font-size: 42px; font-weight: 400; line-height: 1; }
+.invitation-emblem { height: 65px; margin-bottom: 15px; color: var(--invitation-ink); font-family: var(--font-editorial); position: relative; font-size: 42px; font-weight: 400; line-height: 1; }
 .invitation-emblem em { position: relative; left: -6px; top: 7px; font-size: 43px; }
 .invitation-emblem small { display: block; margin-top: 8px; font-size: 20px; color: var(--invitation-sage); }
-.invitation-print .couple-names { font-size: 35px; font-weight: 500; line-height: 1.14; margin: 25px -8px 23px; color: var(--invitation-ink); }
+.invitation-print .couple-names { font-size: 35px; font-weight: 500; line-height: 1.14; margin: 23px -8px 21px; color: var(--invitation-ink); }
 .invitation-print .couple-names span { white-space: nowrap; }
 .invitation-print .couple-names span:first-child { font-style: italic; }
 .invitation-print .couple-names em { color: var(--invitation-rose); font-size: 28px; line-height: 1.4; font-weight: 400; }
 .invitation-print .invitation-message { font-family: var(--font-sans); color: var(--invitation-soft); text-transform: uppercase; font-size: 9px; line-height: 1.9; }
-.invitation-print .date-imprint { display: flex; flex-direction: column; gap: 5px; margin: 26px 0 20px; }
+.invitation-print .date-imprint { display: flex; flex-direction: column; gap: 5px; margin: 24px 0 16px; }
 .invitation-print .date-imprint span { font-size: 10px; color: var(--invitation-soft); }
 .date-number { display: flex; width: 148px; align-items: center; gap: 16px; justify-content: center; }
 .date-number i { height: .5px; flex: 1; background: var(--invitation-border); }

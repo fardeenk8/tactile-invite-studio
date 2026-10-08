@@ -15,7 +15,6 @@ export function InvitationPaper({ miniature = false }: { miniature?: boolean }) 
         <p className="printed-label venue-intro">The wedding will be held at</p>
         <p className="venue-name">Rosewood Garden Estate</p>
         <p className="venue-place">Santa Barbara, California</p>
-        <p className="paper-sentiment">An afternoon of love, a lifetime together.</p>
       </div>
     </div>
   );
