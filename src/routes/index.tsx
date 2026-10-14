@@ -9,6 +9,8 @@ export const Route = createFileRoute("/")({
       { property: 'og:title', content: 'Zaki & Asma — Nikah Invitation' },
       { property: 'og:description', content: 'Open the envelope for the Nikah invitation of Zaki & Asma, 11 November 2026, Mira Road.' },
       { property: 'og:type', content: 'website' },
+      { property: 'og:image', content: 'https://tactile-invite-studio.vercel.app/og-image.jpg' },
+      { name: 'twitter:image', content: 'https://tactile-invite-studio.vercel.app/og-image.jpg' },
       { name: 'twitter:card', content: 'summary_large_image' },
     ],
   }),
