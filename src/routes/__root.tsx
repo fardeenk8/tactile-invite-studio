@@ -78,17 +78,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Clara & Julien — A Wedding Invitation" },
-      { name: "description", content: "An intimate celebration of love in Provence." },
-      { property: "og:title", content: "Clara & Julien — A Wedding Invitation" },
-      { property: "og:description", content: "An intimate celebration of love in Provence." },
+      { title: "Zaki & Asma — Nikah Invitation" },
+      { name: "description", content: "The Nikah of Mohammed Zaki and Asma Khan, 11 November 2026, Mira Road." },
+      { property: "og:title", content: "Zaki & Asma — Nikah Invitation" },
+      { property: "og:description", content: "The Nikah of Mohammed Zaki and Asma Khan, 11 November 2026, Mira Road." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
       { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
       { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossOrigin: 'anonymous' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@400;500&display=swap' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Amiri&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@400;500&display=swap' },
       {
         rel: "stylesheet",
         href: appCss,

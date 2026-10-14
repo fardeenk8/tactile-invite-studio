@@ -6,15 +6,15 @@ export function InvitationPaper({ miniature = false }: { miniature?: boolean }) 
       <div className="engraved-border" aria-hidden="true" />
       <BotanicalArt />
       <div className="invitation-print">
-        <div className="invitation-emblem" aria-hidden="true"><span>E</span><em>J</em><small>❧</small></div>
-        <p className="printed-label">Together with their families</p>
-        <h1 className="couple-names"><span>Emma Rose</span><em>&</em><span>James Alexander</span></h1>
-        <p className="invitation-message">Joyfully invite you to celebrate<br />their wedding</p>
-        <div className="date-imprint"><span>Saturday</span><div className="date-number"><i /><strong>12</strong><i /></div><span>December</span><em>2026</em></div>
+        <p className="bismillah" lang="ar" dir="rtl">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</p>
+        <p className="printed-label">Nikah Ceremony</p>
+        <p className="invitation-message">With the grace and blessings of Allah (SWT), we cordially invite you to join us as we solemnise the sacred bond of Nikah between</p>
+        <h1 className="couple-names"><span>Mohammed Zaki</span><small>Son of Mohammed Ashiq</small><em>&</em><span>Asma Khan</span><small>Daughter of Abdullah Khan</small></h1>
+        <div className="date-imprint"><span>Wednesday</span><div className="date-number"><i /><strong>11</strong><i /></div><span>November</span><em>2026</em></div>
         <Ornament />
-        <p className="printed-label venue-intro">The wedding will be held at</p>
-        <p className="venue-name">Rosewood Garden<br />Estate</p>
-        <p className="venue-place">Santa Barbara, California</p>
+        <p className="printed-label venue-intro">At 7 pm, the Nikah will be held at</p>
+        <p className="venue-name">Anjuman Islam<br />School Ground</p>
+        <p className="venue-place">Naya Nagar, Mira Road</p>
       </div>
     </div>
   );
