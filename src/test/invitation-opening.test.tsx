@@ -12,20 +12,20 @@ describe('Invitation opening', () => {
 
   it('opens once from the seal, reveals the invitation, and can be closed again', () => {
     render(<OpeningExperience />);
-    const seal = screen.getByRole('button', { name: 'Open Zaki and Asma’s Nikah invitation' });
+    const seal = screen.getByRole('button', { name: 'Open Asma and Zaki’s Nikah invitation' });
     fireEvent.click(seal);
     expect(seal).toBeDisabled();
     expect(screen.getByRole('status')).toHaveTextContent('The envelope is opening.');
     act(() => vi.advanceTimersByTime(4300));
     expect(screen.getByRole('status')).toHaveTextContent('Your invitation is open.');
     fireEvent.click(screen.getByRole('button', { name: 'Close and reopen the invitation' }));
-    expect(screen.getByRole('button', { name: 'Open Zaki and Asma’s Nikah invitation' })).toBeEnabled();
+    expect(screen.getByRole('button', { name: 'Open Asma and Zaki’s Nikah invitation' })).toBeEnabled();
   });
 
   it('honors reduced motion with a short opening', () => {
     vi.stubGlobal('matchMedia', vi.fn().mockReturnValue({ matches: true }));
     render(<OpeningExperience />);
-    fireEvent.click(screen.getByRole('button', { name: 'Open Zaki and Asma’s Nikah invitation' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Open Asma and Zaki’s Nikah invitation' }));
     act(() => vi.advanceTimersByTime(180));
     expect(screen.getByRole('status')).toHaveTextContent('Your invitation is open.');
   });

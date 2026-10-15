@@ -311,14 +311,7 @@
 .section-prose { position: relative; font-family: var(--font-editorial); font-size: 19px; line-height: 1.7; color: var(--invitation-soft); margin: 20px auto; max-width: 310px; }
 .romantic-note { font-family: var(--font-editorial); font-size: 18px; line-height: 1.5; font-style: italic; color: var(--invitation-soft); }
 .celebration-section .botanical-sprig { position: absolute; width: 160px; height: 240px; object-fit: contain; z-index: -1; opacity: .65; }
-.reception-section { text-align: left; padding: 85px 48px; }
-.reception-section .botanical-sprig { right: -75px; top: 64px; transform: rotate(-23deg); opacity: .45; }
-.printed-schedule { margin-block: 32px; }
-.printed-schedule > div { display: grid; grid-template-columns: 65px 1fr; align-items: baseline; gap: 15px; padding-block: 15px; border-bottom: .5px solid var(--invitation-border); }
-.printed-schedule span { font-size: 10px; color: var(--invitation-soft); }
-.printed-schedule p { font-family: var(--font-editorial); font-size: 20px; }
-.location-section { padding-bottom: 145px; background: color-mix(in oklch, var(--invitation-stock) 50%, transparent); }
-.location-section .botanical-garland { position: absolute; width: 120%; max-width: none; left: -5%; bottom: -5px; height: 150px; object-fit: contain; }
+.location-section { padding-bottom: 70px; background: color-mix(in oklch, var(--invitation-stock) 50%, transparent); }
 .stationery-link { font-size: 10px; text-transform: uppercase; color: var(--invitation-ink); border-bottom: 1px solid var(--invitation-border); padding-inline: 0; height: 42px; }
 .location-preview-note { font-size: 10px; line-height: 1.6; color: var(--invitation-soft); margin-top: 12px; }
 .verse-section { padding: 85px 52px 95px; }
@@ -341,3 +334,4 @@
 .paper-insert .invitation-print .invitation-message { font-size: 7px; }
 .paper-insert .invitation-print .couple-names small { font-size: 4px; margin-bottom: 1px; }
 @media (max-width: 359px) { .bismillah, .verse-arabic { font-size: 22px; } .invitation-print .invitation-message { font-size: 13px; margin-inline: 16px; } .signature-names { font-size: 26px; white-space: nowrap; } }
+
