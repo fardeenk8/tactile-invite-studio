@@ -17,7 +17,7 @@ export function CelebrationSections() {
         <Button asChild variant="stationery" className="stationery-link"><a href="https://www.google.com/maps/dir/?api=1&destination=7JFJ7VP6%2BQPH" target="_blank" rel="noreferrer">Click here for navigation <ArrowUpRight /></a></Button>
       </section>
       <section className="celebration-section final-section" aria-labelledby="final-title">
-        <BotanicalArt kind="garland" /><p className="printed-label">With duas and warm regards</p><h2 id="final-title">Your presence<br /><em>means the world to us.</em></h2><p className="signature-names">Abdullah Khan <em>&</em> Family</p>
+        <BotanicalArt kind="garland" /><p className="printed-label">With duas and warm regards</p><h2 id="final-title">Your presence<br /><em>means the world to us.</em></h2><p className="signature-names">Abdullah Khan <em>&</em> Family</p><p className="gift-note">No gifts and no envelopes</p>
       </section>
     </div>
   );
